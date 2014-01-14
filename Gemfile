@@ -6,6 +6,8 @@ gem 'rails', '4.0.1'
 
 gem 'mysql2'
 
+gem 'sqlite3', group: :development
+
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets
