@@ -5,14 +5,14 @@ class ResponsesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-   @responses = Message.response_messages
-   render json: @responses, root: 'responses'
+   @responses = Message.where(message_id: params[:message_id])
+   render json: @responses, root: 'responses', each_serializer: ResponseSerializer
   end
 
   # GET /messages/1
   # GET /messages/1.json
   def show
-    render json: @response, root: 'response'
+    render json: @response, root: 'response', serializer: ResponseSerializer
   end
 
   # GET /messages/new
